@@ -1,3 +1,4 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <head>
     <title>Member Project</title>
@@ -30,7 +31,7 @@
                 }
             });
 
-            $("#sign_in_memebr").click(function(){
+            $("#sign_in_member").click(function(){
                 var id = document.getElementById("SignIn_ID").value;
                 var pass = document.getElementById("SignIn_PW").value;
                 if(id==""){
@@ -38,11 +39,12 @@
                 }else if(pass == ""){
                     alert("Enter your PassWord");
                 }else{
+
                     alert(id,pass);
                 }
             });
 
-            $("#delete_memebr").click(function(){
+            $("#delete_member").click(function(){
                 var id = document.getElementById("Delete_ID").value;
                 var pass = document.getElementById("Delete_PW").value;
                 if(id==""){
@@ -59,30 +61,30 @@
 </head>
 
 <body>
-<h2>회원 관리 프로젝트</h2>
+<h2>Member management Project</h2>
 
 <div id="div_SignUp">
-    <form action="#" id ="form_sign_up" method="post">
+    <form action="/hello-servlet" id ="form_sign_up" method="post">
 
-        Name : <input id="name" type="text"></br>
+        Name : <input id="name" type="text" name = "Sign_name"></br>
 
-        Number : <input id="phone" type="tel" name="phone"></br>
+        Phone : <input id="phone" type="tel" name="phone"></br>
 
-        아이디 : <input id="ID" type="text"></br>
+        ID : <input id="ID" type="text"></br>
 
-        암호 : <input id="password" type="password"></br>
+        PassWord : <input id="password" type="password"></br>
 
         <hr size="3">
     </form>
-    <button id="Sign_Up_Button" >회원 등록</button>
+    <button id="Sign_Up_Button" >Sign Up</button>
 </div>
 
 <div id="div_Sign_In" style="display: none;">
-    <form action="#" method="get">
-        <h3>로그인</h3>
-        아이디 : <input id ="SignIn_ID" type="text"></br>
-        비밀번호 : <input id="SignIn_PW" type="password"></br>
-        <button id="sign_in_memebr">로그인</button>
+    <form action="/hello-servlet" method="get">
+        <h3>Log in</h3>
+        ID : <input id ="SignIn_ID" type="text"></br>
+        PassWord : <input id="SignIn_PW" type="password"></br>
+        <button id="sign_in_member">Log In</button>
         <hr size="3">
 
     </form>
@@ -90,18 +92,18 @@
 
 <div id="div_Delete" style="display: none;">
     <form action="#" method="get">
-        <h3>회원 탈퇴</h3>
+        <h3>Delete Info</h3>
 
-        아이디 : <input id ="Delete_ID" type="text"></br>
-        비밀번호 : <input id="Delete_PW" type="password"></br>
-        <button id="delete_memebr">탈퇴</button>
+        ID : <input id ="Delete_ID" type="text"></br>
+        PassWord : <input id="Delete_PW" type="password"></br>
+        <button id="delete_member">Delete Info</button>
 
         <hr size="3">
     </form>
 </div>
 
-<button id="sign_in" >로그인</button>
-<button id="delete" >회원 탈퇴</button>
+<button id="sign_in" >Log In</button>
+<button id="delete" >Delete Info</button>
 
 </body>
 </html>
